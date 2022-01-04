@@ -11,9 +11,9 @@ import javafx.scene.layout.AnchorPane;
 public class CalculatorController
 {
 
-    static double firstOperand = 0;
-    static double secondOperand = 0;
-    static int operator = 0;
+    double firstOperand = 0;
+    double secondOperand = 0;
+    int operator = 0;
     double result = 0;
 
     @FXML
@@ -147,7 +147,7 @@ public class CalculatorController
                 txtResult.setText(Double.toString(result));
                 break;
             case 4: // /
-                result = (firstOperand / secondOperand) + (firstOperand % secondOperand);
+                result = (firstOperand / secondOperand);
                 txtResult.setText(Double.toString(result));
                 break;
         }

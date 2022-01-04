@@ -14,13 +14,13 @@ public class Main extends Application {
     {
         Parent root = FXMLLoader.load(getClass().getResource("CalculatorPane.fxml"));
         primaryStage.setTitle("JFXCalculator");
-        primaryStage.setScene(new Scene(root, 500, 500));
+        primaryStage.setScene(new Scene(root, 495, 475));
         primaryStage.show();
-        primaryStage.setMaxWidth(500);
-        primaryStage.setMaxHeight(500);
+        primaryStage.setMaxWidth(495);
+        primaryStage.setMaxHeight(475);
 
-        primaryStage.setMinWidth(500);
-        primaryStage.setMinHeight(500);
+        primaryStage.setMinWidth(495);
+        primaryStage.setMinHeight(475);
         primaryStage.setResizable(false);
     }
 
