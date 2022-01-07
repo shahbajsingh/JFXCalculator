@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXTextArea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -31,48 +33,27 @@ public class CalculatorController
     @FXML
     void handleNum(ActionEvent event)
     {
-        if (event.getSource().equals(btnZero))
-        {
+        if (event.getSource().equals(btnZero)) {
             txtResult.appendText("0");
-        }
-        else if (event.getSource().equals(btnOne))
-        {
+        } else if (event.getSource().equals(btnOne)) {
             txtResult.appendText("1");
-        }
-        else if (event.getSource().equals(btnTwo))
-        {
+        } else if (event.getSource().equals(btnTwo)) {
             txtResult.appendText("2");
-        }
-        else if (event.getSource().equals(btnThree))
-        {
+        } else if (event.getSource().equals(btnThree)) {
             txtResult.appendText("3");
-        }
-        else if (event.getSource().equals(btnFour))
-        {
+        } else if (event.getSource().equals(btnFour)) {
             txtResult.appendText("4");
-        }
-        else if (event.getSource().equals(btnFive))
-        {
+        } else if (event.getSource().equals(btnFive)) {
             txtResult.appendText("5");
-        }
-        else if (event.getSource().equals(btnSix))
-        {
+        } else if (event.getSource().equals(btnSix)) {
             txtResult.appendText("6");
-        }
-        else if (event.getSource().equals(btnSeven))
-        {
+        } else if (event.getSource().equals(btnSeven)) {
             txtResult.appendText("7");
-        }
-        else if (event.getSource().equals(btnEight))
-        {
+        } else if (event.getSource().equals(btnEight)) {
             txtResult.appendText("8");
-        }
-        else if (event.getSource().equals(btnNine))
-        {
+        } else if (event.getSource().equals(btnNine)) {
             txtResult.appendText("9");
-        }
-        else if (event.getSource().equals(btnDot))
-        {
+        } else if (event.getSource().equals(btnDot)) {
             txtResult.appendText(".");
         }
     }
@@ -81,30 +62,24 @@ public class CalculatorController
     @FXML
     void handleOp(ActionEvent event)
     {
-        if (event.getSource().equals(btnPlus))
-        {
+        if (event.getSource().equals(btnPlus)) {
             firstOperand = Double.parseDouble(txtResult.getText());
             operator = 1;
             txtResult.setText("");
-        }
-        else if (event.getSource().equals(btnMinus))
-        {
+        } else if (event.getSource().equals(btnMinus)) {
             firstOperand = Double.parseDouble(txtResult.getText());
             operator = 2;
             txtResult.setText("");
-        }
-        else if (event.getSource().equals(btnMult))
-        {
+        } else if (event.getSource().equals(btnMult)) {
             firstOperand = Double.parseDouble(txtResult.getText());
             operator = 3;
             txtResult.setText("");
-        }
-        else if (event.getSource().equals(btnDiv))
-        {
+        } else if (event.getSource().equals(btnDiv)) {
             firstOperand = Double.parseDouble(txtResult.getText());
             operator = 4;
             txtResult.setText("");
         }
+
     }
 
     @FXML
@@ -166,16 +141,49 @@ public class CalculatorController
     @FXML
     void handleKeys(KeyEvent event)
     {
-
-        if(event.getCode().equals(KeyCode.ENTER))
-        {
+        // TO-DO: add multiply keycode shift + 8
+        if(event.getCode().equals(KeyCode.ENTER)) {
             btnEqual.fire();
-        }
-        if(event.getCode().equals(KeyCode.ESCAPE))
-        {
+        } else if(event.getCode().equals(KeyCode.ESCAPE)) {
             btnPower.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT0)) {
+            btnZero.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT1)) {
+            btnOne.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT2)) {
+            btnTwo.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT3)) {
+            btnThree.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT4)) {
+            btnFour.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT5)) {
+            btnFive.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT6)) {
+            btnSix.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT7)) {
+            btnSeven.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT8)) {
+            btnEight.fire();
+        } else if(event.getCode().equals(KeyCode.DIGIT9)) {
+            btnNine.fire();
+        } else if(event.getCode().equals(KeyCode.PERIOD)
+                || event.getCode().equals(KeyCode.DECIMAL)) {
+            btnDot.fire();
+        } else if(event.getCode().equals(KeyCode.EQUALS)
+                || event.getCode().equals(KeyCode.PLUS)) {
+            btnPlus.fire();
+        } else if(event.getCode().equals(KeyCode.UNDERSCORE)
+                || event.getCode().equals(KeyCode.MINUS)) {
+            btnMinus.fire();
+        } else if(event.getCode().equals(KeyCode.SLASH)
+                || event.getCode().equals(KeyCode.DIVIDE)) {
+            btnDiv.fire();
+        } else if(event.getCode().equals(KeyCode.BACK_SPACE)) {
+            btnClear.fire();
         }
+
     }
+
 
 
 
